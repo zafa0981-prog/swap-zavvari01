@@ -1,0 +1,23 @@
+{
+  "name": "swap-zavari",
+  "version": "1.0.0",
+  "private": true,
+  "description": "سوآپ زواری - Android app (Capacitor)",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node test/selftest.mjs"
+  },
+  "dependencies": {
+    "@anuradev/capacitor-background-mode": "8.1.0",
+    "@capacitor-community/keep-awake": "8.0.1",
+    "@capacitor/android": "8.6.2",
+    "@capacitor/app-launcher": "8.0.1",
+    "@capacitor/core": "8.6.2",
+    "@walletconnect/ethereum-provider": "2.26.0",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2",
+    "esbuild": "0.28.2"
+  }
+}

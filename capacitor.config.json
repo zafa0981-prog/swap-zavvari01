@@ -1,0 +1,7 @@
+{
+  "appId": "app.swapzavari",
+  "appName": "سوآپ زواری",
+  "webDir": "www",
+  "server": { "androidScheme": "https" },
+  "plugins": { "CapacitorHttp": { "enabled": true } }
+}

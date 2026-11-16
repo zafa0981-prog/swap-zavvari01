@@ -1,0 +1,122 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0f16"><title>سوآپ زواری</title>
+<style>
+:root{--bg:#0a0f16;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.08);--tx:#e8eef5;--mut:#8fa1b3;
+--up:#34d399;--dn:#f87171;--acc:#38bdf8;--r:16px}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font-family:"Vazirmatn",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+background:radial-gradient(1200px 600px at 85% -10%,rgba(56,189,248,.12),transparent 60%),
+radial-gradient(900px 500px at 0% 110%,rgba(52,211,153,.08),transparent 60%),var(--bg);
+padding-bottom:env(safe-area-inset-bottom)}
+.wrap{max-width:880px;margin:auto;padding:14px 14px 40px}
+header{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 16px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:20px;
+background:linear-gradient(135deg,#38bdf8,#34d399);color:#06202b;font-weight:800}
+.brand h1{font-size:19px;margin:0;font-weight:700}
+.brand small{display:block;color:var(--mut);font-size:11px;margin-top:2px}
+.pill{display:flex;align-items:center;gap:9px;padding:8px 14px;border-radius:999px;background:var(--card);
+border:1px solid var(--line);font-size:13px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--dn);flex:none}
+.pill.on .dot{background:#22c55e;animation:pulse 1.7s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(.8);opacity:.4;box-shadow:0 0 0 0 rgba(34,197,94,.5)}
+50%{transform:scale(1.3);opacity:1;box-shadow:0 0 0 9px rgba(34,197,94,0)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-top:12px;backdrop-filter:blur(8px)}
+.hero{padding:20px 18px}
+.lab{color:var(--mut);font-size:12px}
+.big{font-size:38px;font-weight:700;margin:4px 0 10px;font-variant-numeric:tabular-nums}
+.big small{font-size:14px;color:var(--mut);font-weight:400;margin-inline-start:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:6px 12px;border-radius:999px;font-size:13px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.up{color:var(--up)}.dn{color:var(--dn)}
+.ctl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+button,input{font:inherit}
+button{font-size:15px;font-weight:600;padding:13px;border-radius:14px;border:1px solid var(--line);color:var(--tx);
+background:var(--card);cursor:pointer;transition:.15s}
+button:active{transform:scale(.98)}button[disabled]{opacity:.4}
+#st{background:linear-gradient(135deg,#059669,#10b981);border:0;color:#fff}
+#sp{background:linear-gradient(135deg,#b45309,#d97706);border:0;color:#fff}
+.link{background:none;border:0;color:var(--mut);font-size:12px;padding:10px;width:100%;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.stat b{display:block;font-size:17px;margin-top:4px;font-variant-numeric:tabular-nums}
+h2{font-size:14px;margin:0 0 10px;color:var(--mut);font-weight:600}
+.tb{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
+th{color:var(--mut);font-weight:500}
+td,th{padding:8px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.tag{padding:2px 8px;border-radius:8px;font-size:11px}
+.buy{background:rgba(56,189,248,.15);color:var(--acc)}.sell{background:rgba(251,191,36,.15);color:#fbbf24}
+.real{background:rgba(248,113,113,.15);color:#fca5a5}
+.note{font-size:12.5px;line-height:1.9;color:var(--mut)}
+.warn{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.07);color:#fcd34d;font-size:12.5px;line-height:1.9}
+.err{color:var(--dn);font-size:12.5px;min-height:18px;margin-top:10px}
+.empty{color:var(--mut);font-size:13px;padding:6px 0}
+.awake{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--mut);margin-top:12px}
+.awake i{width:7px;height:7px;border-radius:50%;background:#64748b;display:inline-block}
+.awake.ok i{background:var(--up)}
+input[type=text]{width:100%;padding:11px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--tx);direction:ltr;margin:6px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.row button{flex:1;min-width:130px;padding:11px;font-size:14px}
+.prop{border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.07)}
+.prop b{color:var(--tx)}
+#uri{display:none;text-align:center}#uri img{background:#fff;border-radius:10px;padding:6px;margin:8px 0}
+.live-on{background:linear-gradient(135deg,#b91c1c,#ef4444)!important;border:0;color:#fff}
+</style></head><body><div class="wrap">
+<header>
+ <div class="brand"><div class="logo">Z</div><div><h1>سوآپ زواری</h1><small>معاملات USDT — آزمایشی و واقعی با تأیید تو</small></div></div>
+ <div class="pill" id="pill"><span class="dot"></span><span id="stxt">خاموش</span></div>
+</header>
+
+<div class="card warn" id="modebar">حالت آزمایشی (Paper): هیچ تراکنش واقعی ارسال نمی‌شود. سود تضمین‌شده‌ای وجود ندارد.</div>
+
+<section class="card hero">
+ <div class="lab">ارزش کل حساب آزمایشی</div>
+ <div class="big"><span id="eq">-</span><small>USDT</small></div>
+ <div class="chips">
+  <span class="chip">امروز: <b id="pt" dir="ltr">-</b></span>
+  <span class="chip">کل: <b id="pa" dir="ltr">-</b></span>
+ </div>
+ <div class="awake" id="awake"><i></i><span id="awtxt">قفل روشن‌ماندن صفحه: غیرفعال</span></div>
+</section>
+
+<div class="ctl"><button id="st">▶ شروع ربات</button><button id="sp">■ توقف ربات</button></div>
+<button class="link" id="rs">ریست آزمایش و بازگشت به ۲۱ USDT</button>
+
+<section class="card prop" id="propcard" style="display:none">
+ <h2>پیشنهاد معامله واقعی — منتظر تأیید تو</h2>
+ <div class="note" id="proptxt"></div>
+ <div class="row"><button id="pa_ok">تأیید و ارسال به Trust Wallet</button><button id="pa_no">رد پیشنهاد</button></div>
+ <div class="note" id="pmsg"></div>
+</section>
+
+<div class="grid" id="stats"></div>
+
+<section class="card"><h2>کیف پول Trust Wallet (WalletConnect)</h2>
+ <div class="note" id="wstate">متصل نیست</div>
+ <div class="note">Project ID را از dashboard.reown.com (رایگان) بگیر و اینجا بگذار:</div>
+ <input type="text" id="pid" placeholder="WalletConnect / Reown Project ID">
+ <div class="row"><button id="pidsave">ذخیره Project ID</button><button id="wcon">اتصال به Trust Wallet</button>
+  <button id="wcoff">قطع اتصال</button></div>
+ <div id="uri"><div class="note">اگر Trust Wallet خودکار باز نشد: دکمه «باز کردن در Trust Wallet» را بزن، یا لینک را کپی و در بخش WalletConnect کیف پول Paste کن.</div>
+  <img id="qr" width="220" height="220" alt=""><div class="row"><button id="dlbtn">باز کردن در Trust Wallet</button><button id="curi">کپی لینک اتصال</button></div></div>
+ <div class="row"><button id="live">معامله واقعی: خاموش</button><button id="bal">نمایش موجودی USDT</button></div>
+ <div class="note" id="balbox"></div>
+ <div class="note" id="wmsg"></div>
+</section>
+
+<section class="card"><h2>تنظیمات</h2>
+ <div class="note">سقف هر معامله واقعی (USDT)</div><input type="text" id="set_maxlive" inputmode="decimal">
+ <div class="note">حد ضرر (٪) و حد سود (٪)</div>
+ <div class="row"><input type="text" id="set_sl" inputmode="decimal" style="flex:1"><input type="text" id="set_tp" inputmode="decimal" style="flex:1"></div>
+ <div class="note">آدرس رسمی USDT روی شبکه Base (اختیاری؛ فقط اگر از منبع رسمی Tether تأیید کرده‌ای)</div>
+ <input type="text" id="set_base" placeholder="0x...">
+ <div class="row"><button id="set_save">ذخیره تنظیمات</button></div><div class="note" id="set_msg"></div></section>
+<section class="card"><h2>معاملات باز</h2><div class="tb" id="pos"></div></section>
+<section class="card"><h2>آخرین اسکن بازار</h2><div class="note" id="scan"></div></section>
+<section class="card"><h2>تاریخچه معاملات</h2><div class="tb" id="trd"></div></section>
+<div class="err" id="err"></div>
+</div>
+<script src="app.js"></script></body></html>
